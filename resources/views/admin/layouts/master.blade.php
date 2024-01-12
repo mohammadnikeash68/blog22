@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     @include('admin.layouts.head-tag')
+
 </head>
+
 <body class="bg-secondary-subtle">
 <div class="wrap_panel_all">
     @include('admin.layouts.header')
@@ -20,5 +22,6 @@
 </div>
 
 @include('admin.layouts.scripts')
+
 </body>
 </html>

@@ -1,5 +1,5 @@
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src={{asset('adminAssets/js/jquery.min.js')}}></script>
+<script src={{asset('adminAssets/js/bootstrap.bundle.js')}}></script>
 <script>
     $(document).ready(function (){
         $("#switch_on_sidebar").click(function (){
@@ -82,4 +82,6 @@
         })
     })
 </script>
-<script src="assets/js/fullscreen.min.js"></script>
+<script src="{{asset('adminAssets/js/fullscreen.min.js')}}"></script>
+@yield('scripts')
+@yield('styles')

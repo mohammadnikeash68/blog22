@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'iransans';
+    src: url("assets/font/iransans/IranianSans.woff") format('woff'),
+    url("assets/font/iransans/IranianSans.ttf") format('truetype'),
+    url("assets/font/iransans/IranianSans.woff2") format('woff2');
+}
+*{
+    direction: rtl;
+    text-align: right;
+    font-family: 'iransans';
+
+}
+a{
+    text-decoration: none;
+}
+.row{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+.font-1{
+    font-size: 13px;
+}
+.bg-sidebar{
+    background-color: #404e67;
+}
+.h_100vh{
+  height: 100vh;
+}
+.text-link{
+    color: #e1e1e1;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+}
+.text-align-justify{
+    text-align: justify;
+}
+.pointer{
+    cursor: pointer;
+}
+.top-2rem{
+    top: 2rem;
+}
+.fz-2{
+    font-size: 0.8rem;
+}
+/*div{*/
+/*    border: 1px solid red;*/
+/*    text-align: center;*/
+/*}*/
+tr,th{
+    text-align: center;
+}

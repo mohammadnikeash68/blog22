@@ -1,10 +1,11 @@
+
 <header class="header position-fixed end-0 start-0 z-3">
     <div class="row">
         <div class="col-md-3 col-12 col-lg-2 py-2 p-0 bg-sidebar">
             <div class="header-sidebar d-flex flex-row-reverse flex-md-row justify-content-between align-items-center px-2 ">
 
                 <i class="fa fa-ellipsis-h pointer d-block d-md-none text-white" id="menu_toggle" data-status="0"></i>
-                <img src="assets/images/logo.png">
+                <img src="{{asset('adminAssets/images/logo.png')}}">
                 <i class="fa fa-toggle-on pointer text-white" id="switch_on_sidebar" data-status="0"></i>
                 <i class="fa fa-toggle-off pointer d-none text-white" id="switch_off_sidebar" data-status="0"></i>
             </div>
@@ -34,14 +35,21 @@
                     </i>
                     <div class="list-group">
                                 <span class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
-                                    محمد نیک عیش
+                                    {{auth()->user()->name}}
                                 </span>
                         <ul class="dropdown-menu rounded-1 shadow font-1 border-0 ">
                             <li class="border-bottom"><a class="dropdown-item" href="#"><i class="fa fa-cog ms-2"></i> تنظیمات</a></li>
                             <li class="border-bottom"><a class="dropdown-item" href="#"><i class="fa fa-user ms-2"></i> کاربر </a></li>
                             <li class="border-bottom"><a class="dropdown-item" href="#"> <i class="fa fa-envelope ms-2"></i> پیام ها</a></li>
                             <li class="border-bottom"><a class="dropdown-item" href="#"><i class="fa fa-lock ms-2"></i>قفل صفحه</a></li>
-                            <li><a class="dropdown-item" href="#"> <i class="fa fa-sign-out ms-2"></i>خروج</a></li>
+                            <li>
+                                <form action="{{route('logout')}}" method="post">
+                                    @csrf
+                                    <button class="dropdown-item" type="submit" >
+                                        <i class="fa fa-sign-out ms-2"></i>خروج
+                                    </button>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </div>
