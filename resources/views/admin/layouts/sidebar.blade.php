@@ -11,7 +11,8 @@
             <a href="#" class="nav-link text-link" onclick="showMenu()">
                 <i class="fa fa-list"></i>
                 <span>دسته ها</span>
-                <i class="fas fa-angle-down"></i>
+                <i class="fas fa-angle-down icon-angle deactive"></i>
+                <i class="fas fa-angle-left icon-angle"></i>
             </a>
             <ul class="me-3 sub-ul">
                 <li class="nav-item">
@@ -51,24 +52,13 @@
 <script>
 
     function showMenu(){
-        (function() {
-            orig = $.fn.css;
-            $.fn.css = function() {
-                var result = orig.apply(this, arguments);
-                $(this).trigger('stylechanged');
-                return result;
-            }
-        })();
-        $(".sub-ul").slideToggle();
-        // if ($('.sub-ul').slideDown()){
-        //
-        // }
-        // if($('.sub-ul').slideUp()){
-        //
-        // }
-        $('.sub-ul').on('stylechanged', function () {
-            console.log('css changed');
+
+        $(".sub-ul").slideToggle('slow',function (){
+            $('.fa-angle-down').toggleClass('deactive')
+            $('.fa-angle-left').toggleClass('deactive')
         });
+
+
 
 
 
@@ -79,6 +69,17 @@
 @section('styles')
     <style>
         .sub-ul{
+            display: none;
+        }
+        .icon-angle{
+            font-size: 10px;
+            margin-right: 2px;
+        }
+
+        .active{
+            display: block;
+        }
+        .deactive{
             display: none;
         }
     </style>
