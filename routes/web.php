@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminControllerDashboard;
+use App\Http\Controllers\admin\category\CategoryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,4 +42,7 @@ require __DIR__.'/auth.php';
 
 Route::prefix('admin')->namespace('Admin')->group(function (){
     Route::get('/', [AdminControllerDashboard::class,'index'])->name('admin.index');
+    Route::prefix('category')->group(function (){
+        Route::get('/',[CategoryController::class,'index'])->name('admin.category.index');
+    });
 });

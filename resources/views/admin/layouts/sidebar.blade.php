@@ -16,7 +16,7 @@
             </a>
             <ul class="me-3 sub-ul">
                 <li class="nav-item">
-                    <a href="#" class="ms-2 fz-2 text-link">دسته دو</a>
+                    <a href="{{route('admin.category.index')}}" class="ms-2 fz-2 text-link">لیست دسته بندی ها</a>
 
                 </li>
                 <li>
@@ -49,6 +49,8 @@
     </ul>
 </div>
 @section('scripts')
+
+@endsection
 <script>
 
     function showMenu(){
@@ -65,7 +67,6 @@
     }
 </script>
 
-@endsection
 @section('styles')
     <style>
         .sub-ul{
