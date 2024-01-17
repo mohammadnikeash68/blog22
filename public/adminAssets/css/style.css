@@ -1,18 +1,27 @@
 @font-face {
-    font-family: 'iransans';
-    src: url("assets/font/iransans/IranianSans.woff") format('woff'),
-    url("assets/font/iransans/IranianSans.ttf") format('truetype'),
-    url("assets/font/iransans/IranianSans.woff2") format('woff2');
+    font-family: 'IRANSansWeb';
+    src: url('adminAssets/font/iransans/IRANSansWeb.eot') format('eot'),
+    url('adminAssets/font/iransans/IRANSansWeb.woff') format('woff'),
+    url('adminAssets/font/iransans/IRANSansWeb.ttf') format('truetype');
+    src: url('adminAssets/font/iransans/IRANSans(FaNum)_Medium.eot') format('eot'),
+    url('adminAssets/font/iransans/IRANSansWeb(FaNum).woff') format('woff'),
+    url('adminAssets/font/iransans/IRANSansWeb(FaNum).ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 *{
     direction: rtl;
     text-align: right;
-    font-family: 'iransans';
+
 
 }
-a{
+a,span{
     text-decoration: none;
+    font-family: 'IRANSansWeb' !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
 }
+
 .row{
     margin-right: 0 !important;
     margin-left: 0 !important;
@@ -21,7 +30,7 @@ a{
     font-size: 13px;
 }
 .bg-sidebar{
-    background-color: #404e67;
+    background-color: #282d3e;
 }
 .h_100vh{
   height: 100vh;
