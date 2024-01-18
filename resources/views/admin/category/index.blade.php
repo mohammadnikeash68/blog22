@@ -5,9 +5,9 @@
 @section('content')
 
 <div class="wrap-category shadow bg-white rounded-4 p-3 mt-5">
-    <h5>لیست دسته بندی ها</h5>
+    <h5 class="border-bottom p-3 mb-3">لیست دسته بندی ها</h5>
     <table id="file-datatablee"
-           class="table table-bordered text-nowrap key-buttons  border-bottom text-center">
+           class="table table-bordered text-nowrap key-buttons  border-bottom text-center ">
         <thead>
         <tr>
             <th class="border-bottom-0">#</th>
@@ -18,9 +18,9 @@
         </thead>
         <tbody>
             <tr>
-                <td>dd</td>
-                <td>d</td>
-                <td>dd</td>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
 
 
                 <td class="width-16-rem text-left">
