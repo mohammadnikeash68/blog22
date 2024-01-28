@@ -5,19 +5,316 @@
 @section('content')
 
 <div class="wrap-category shadow bg-white rounded-4 p-3 mt-5">
-    <h5 class="border-bottom p-3 mb-3">لیست دسته بندی ها</h5>
-    <table id="file-datatablee"
-           class="table table-bordered text-nowrap key-buttons  border-bottom text-center ">
-        <thead>
+    <div class="d-flex justify-content-between border-bottom mb-3 p-2">
+        <h5 class="">لیست دسته بندی ها</h5>
+        <a href="#" class="btn btn-success">ثبت دسته بندی</a>
+    </div>
+    <table id="file-datatablee" class="text-center transition-all">
+        <thead class="border-top">
         <tr>
-            <th class="border-bottom-0">#</th>
-            <th class="border-bottom-0">نام دسته بندی</th>
-            <th class="border-bottom-0">نام والد</th>
-            <th class="max-width-16-rem text-center">عملیات</th>
+            <th class="">#</th>
+            <th class="">نام دسته بندی</th>
+            <th class="">نام والد</th>
+            <th class=" text-center">عملیات</th>
         </tr>
         </thead>
         <tbody>
             <tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
+                <td>1</td>
+                <td>تلویزیون</td>
+                <td>کالای دیجیتال</td>
+
+
+                <td class="width-16-rem text-left">
+                    <a href="#"
+                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+
+                    <form class="d-inline" id="myform"
+                          action="#"
+                          method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button data-id="1" id="1" type="button"
+                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
+                                class="fa fa-remove"></i></button>
+                    </form>
+
+                </td>
+            </tr><tr>
                 <td>1</td>
                 <td>تلویزیون</td>
                 <td>کالای دیجیتال</td>

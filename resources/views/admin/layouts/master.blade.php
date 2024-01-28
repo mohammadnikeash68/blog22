@@ -12,7 +12,7 @@
         <div class="row">
             @include('admin.layouts.sidebar')
             <div class="col-md-3 col-lg-2"></div>
-            <div class="col-md-9 wrap_content col-lg-10">
+            <div class="col-md-9 wrap_content col-lg-10 transition-all">
                 @yield('content')
             </div>
             <!--            end wrap_content-->
