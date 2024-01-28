@@ -44,5 +44,11 @@ Route::prefix('admin')->namespace('Admin')->group(function (){
     Route::get('/', [AdminControllerDashboard::class,'index'])->name('admin.index');
     Route::prefix('category')->group(function (){
         Route::get('/',[CategoryController::class,'index'])->name('admin.category.index');
+        Route::get('/create',[CategoryController::class,'create'])->name('admin.category.create');
+        Route::post('/store',[CategoryController::class,'store'])->name('admin.category.store');
+        Route::get('/edit/{category}',[CategoryController::class,'edit'])->name('admin.category.edit');
+        Route::get('/update/{category}',[CategoryController::class,'update'])->name('admin.category.update');
+        Route::get('/destroy/{category}',[CategoryController::class,'destroy'])->name('admin.category.destroy');
+
     });
 });

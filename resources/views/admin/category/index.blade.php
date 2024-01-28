@@ -7,7 +7,7 @@
 <div class="wrap-category shadow bg-white rounded-4 p-3 mt-5">
     <div class="d-flex justify-content-between border-bottom mb-3 p-2">
         <h5 class="">لیست دسته بندی ها</h5>
-        <a href="#" class="btn btn-success">ثبت دسته بندی</a>
+        <a href="{{route('admin.category.create')}}" class="btn btn-success">ثبت دسته بندی</a>
     </div>
     <table id="file-datatablee" class="text-center transition-all">
         <thead class="border-top">
@@ -19,10 +19,17 @@
         </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
+        @foreach($categories as $key => $cat)
+            @php
+
+                $parent_name = $categories->where('id',$cat->parent_id);
+
+
+            @endphp
+          <tr>
+                <td>{{$key + 1}}</td>
+                <td>{{$cat->name_f != null ? $cat->name_f : '-'}}</td>
+                <td>{{!$parent_name->isEmpty() ? $parent_name->first()->name_f : '-'}}</td>
 
 
                 <td class="width-16-rem text-left">
@@ -34,308 +41,14 @@
                           method="post">
                         @method('DELETE')
                         @csrf
-                        <button data-id="1" id="1" type="button"
+                        <button data-id="{{$cat->id}}" id="1" type="button"
                                 class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
                                 class="fa fa-remove"></i></button>
                     </form>
 
                 </td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr><tr>
-                <td>1</td>
-                <td>تلویزیون</td>
-                <td>کالای دیجیتال</td>
-
-
-                <td class="width-16-rem text-left">
-                    <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
-
-                    <form class="d-inline" id="myform"
-                          action="#"
-                          method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button data-id="1" id="1" type="button"
-                                class="delete btn  btn-danger  btn-sm delete_user"> حذف <i
-                                class="fa fa-remove"></i></button>
-                    </form>
-
-                </td>
-            </tr>
+        @endforeach
 
         </tbody>
     </table>
@@ -344,10 +57,11 @@
 
 @section('scripts')
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+
     <script>
         var table = $('#file-datatablee').DataTable({
             buttons: ['excel', 'colvis'],
-            order: [[0, 'desc']],
+            // order: [[0, 'desc']],
             responsive: true,
 
             language: {
@@ -595,6 +309,39 @@
                     "renameTitle": "تغییر نام وضعیت"
                 }
             }
+        });
+
+        $(document).ready(function () {
+            $(".delete").click(function (){
+                var id = $(this).data('id');
+                var url = {{route('admin.category.destroy',':id')}}
+                $.confirm({
+                    title: 'حذف',
+                    content: 'آیا از حذف دسته بندی مطمئنید؟',
+                    type: 'red',
+                    typeAnimated: true,
+                    buttons: {
+                        tryAgain: {
+                            text: 'بله',
+                            btnClass: 'btn-red',
+                            action: function(){
+                                $.ajax({
+                                    url: url.replace(id,':id'),
+
+
+                                });
+
+                            }
+                        },
+                        close: {
+                            text: 'خیر',
+                            btnClass: 'btn-default'
+                        }
+                    }
+                });
+
+
+            });
         });
     </script>
 @endsection
