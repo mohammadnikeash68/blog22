@@ -84,5 +84,6 @@
 </script>
 <script src="{{asset('adminAssets/js/fullscreen.min.js')}}"></script>
 <script src="{{asset('adminAssets/js/jquery-confirm.min.js')}}"></script>
+
 @yield('scripts')
 @yield('styles')

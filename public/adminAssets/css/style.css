@@ -104,3 +104,16 @@ th,td{
 .dataTables_info{
     float: right !important;
 }
+/* select2 */
+.select2-container .select2-selection--single{
+    height: 43px !important;
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px !important;
+    border: none !important;
+    border:1px solid #cccccc !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    top: 5px !important;
+}

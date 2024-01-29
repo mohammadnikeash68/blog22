@@ -6,4 +6,5 @@
 {{--<link rel="stylesheet" href={{asset('adminAssets/css/b.css')}}>--}}
 <link rel="stylesheet" href={{asset('adminAssets/css/style.css')}}>
 <link rel="stylesheet" href={{asset('adminAssets/css/jquery-confirm.min.css')}}>
+
 @yield('head-tag')

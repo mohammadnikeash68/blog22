@@ -1,8 +1,14 @@
 @extends('admin.layouts.master')
 @section('head-tag')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <link href="{{ asset('css/iziToast.css') }}" rel="stylesheet">
+
 @endsection
 @section('content')
+    <div class="bg_loading"></div>
+    <div class="spinner-border text-primary  wrap-spinner"  role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
 
 <div class="wrap-category shadow bg-white rounded-4 p-3 mt-5">
     <div class="d-flex justify-content-between border-bottom mb-3 p-2">
@@ -34,7 +40,9 @@
 
                 <td class="width-16-rem text-left">
                     <a href="#"
-                       class="btn btn-primary btn-sm "> ویرایش <i class="fa fa-edit"></i> </a>
+                       class="btn btn-primary btn-sm edit"> ویرایش <i class="fa fa-edit"></i> </a>
+                    <div class="result"></div>
+                    <div class="log"></div>
 
                     <form class="d-inline" id="myform"
                           action="#"
@@ -57,11 +65,37 @@
 
 @section('scripts')
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+    <script src="{{ asset('js/iziToast.js') }}"></script>
+    @if(session()->get('success'))
+        <script>
+            iziToast.success({
+                title: '',
+                message: 'ثبت با موفقیت انجام شد',
+                position: 'topRight',
 
+            });
+        </script>
+    @endif
+    @if(session()->get('error'))
+        <script>
+            iziToast.error({
+                title: '',
+                message: 'ثبت با خطا مواجه شد',
+                position: 'topRight',
+
+            });
+        </script>
+    @endif
     <script>
+        console.log(window.location.host)
+        function sleep(ms) {
+            clearInterval(sleepSetTimeout_ctrl);
+            return new Promise(resolve => sleepSetTimeout_ctrl = setTimeout(resolve, ms));
+        }
+        $(".wrap-spinner").show()
         var table = $('#file-datatablee').DataTable({
             buttons: ['excel', 'colvis'],
-            // order: [[0, 'desc']],
+            order: [[0, 'desc']],
             responsive: true,
 
             language: {
@@ -312,9 +346,11 @@
         });
 
         $(document).ready(function () {
+
+
             $(".delete").click(function (){
                 var id = $(this).data('id');
-                var url = {{route('admin.category.destroy',':id')}}
+                var url = '{{route('admin.category.destroy',':id')}}'
                 $.confirm({
                     title: 'حذف',
                     content: 'آیا از حذف دسته بندی مطمئنید؟',
@@ -322,14 +358,43 @@
                     typeAnimated: true,
                     buttons: {
                         tryAgain: {
+
                             text: 'بله',
                             btnClass: 'btn-red',
                             action: function(){
                                 $.ajax({
-                                    url: url.replace(id,':id'),
+                                    url:url.replace(":id",id),
+                                    type:'get',
+                                    contentType: "application/json",
+                                    data: {name:"mohammad"},
+                                    beforeSend: function( xhr ) {
+                                        $(".bg_loading").show();
+                                        $(".wrap-spinner").show();
+                                    }
+                                }).done(function (data){
+                                    console.log(data)
+                                    iziToast.success({
+                                        title: 'حذف',
+                                        message: 'حذف با موفقیت انجام شد',
+                                        position: 'topLeft',
 
+                                    });
 
-                                });
+                                }).fail(function (jqXHR, textStatus){
+                                    console.log(textStatus)
+                                    iziToast.error({
+                                        title: 'حذف',
+                                        message: 'حذف با خطا مواجه شد',
+                                        position: 'topLeft',
+
+                                    });
+
+                                }).always(function (){
+                                    setTimeout(function (){
+                                        $(".bg_loading").hide();
+                                        $(".wrap-spinner").hide();
+                                    },1000)
+                                })
 
                             }
                         },
@@ -337,11 +402,38 @@
                             text: 'خیر',
                             btnClass: 'btn-default'
                         }
-                    }
+                    },
+
                 });
 
 
             });
         });
     </script>
+@endsection
+@section('styles')
+<style>
+    .wrap-spinner{
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        z-index: 5;
+        transition: all ease 6ms;
+    }
+    .bg_loading{
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 4;
+        transition: all ease 6ms;
+
+    }
+</style>
 @endsection

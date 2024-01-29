@@ -20,4 +20,10 @@ class CategoryController extends Controller
         Category::create($request->except('_token'));
         return redirect()->route('admin.category.index')->with('success','دسته بندی با موفقیت ثبت گردید');
     }
+    public function destroy(Category $category,Request $request){
+        $delete = $category->delete();
+        if($delete){
+
+        }
+    }
 }
